@@ -28,3 +28,4 @@ ex) git checkout -b apply-feedback
 
 학습내용 
 1. https://nkcnow.tistory.com/219
+2. Optional orElse, orElseGet 차이
