@@ -29,3 +29,5 @@ ex) git checkout -b apply-feedback
 학습내용 
 1. https://nkcnow.tistory.com/219
 2. Optional orElse, orElseGet 차이
+3. 자바의 enum 전체 값은 values() 메소드를 통해 배열로 접근 가능
+4. https://www.baeldung.com/java-optional
