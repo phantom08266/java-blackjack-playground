@@ -1,6 +1,8 @@
 package nextstep.blackjack;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class PlayingCards {
@@ -34,6 +36,8 @@ public class PlayingCards {
         }
         return result;
     }
+
+
 
     private int getAceNumber(int sum) {
         if (sum + ACE_MAX_NUMBER > BLACK_JACK_NUMBER) {
