@@ -37,10 +37,10 @@ Feat CardNumber 도메인 클래스 작성 (with 테스트 케이스)
 
 ~~Feat PlayingCard 클래스 구현  (with 테스트 케이스)~~
 
-Feat PlayingCards 일급컬렉션 구현  (with 테스트 케이스)
+~~Feat PlayingCards 일급컬렉션 구현  (with 테스트 케이스)~~
 
-- 카드합이 21인 경우 블랙잭(isBlackJack)
-- 카드 숫자 총합 반환 (sumCardNumber)
+~~- 카드합이 21인 경우 블랙잭(isBlackJack)~~
+~~- 카드 숫자 총합 반환 (sumCardNumber)~~
 - 카드 추가 기능
 
 

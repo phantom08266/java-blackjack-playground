@@ -12,6 +12,14 @@ public class PlayingCard {
         this.shape = shape;
     }
 
+    public boolean isAceCard() {
+        return Number.ACE.equals(number);
+    }
+
+    public int cardValue() {
+        return number.getValue();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {

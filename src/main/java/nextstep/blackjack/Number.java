@@ -15,9 +15,13 @@ public enum Number {
     ACE(11)
     ;
 
-    public final int value;
+    private final int value;
 
     Number(int value) {
         this.value = value;
+    }
+
+    public int getValue(){
+        return this.value;
     }
 }
