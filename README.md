@@ -35,7 +35,7 @@ Feat CardNumber 도메인 클래스 작성 (with 테스트 케이스)
   int value;
   CardType jack, queen, king, ace, none;
 
-Feat PlayingCard 클래스 구현  (with 테스트 케이스)
+~~Feat PlayingCard 클래스 구현  (with 테스트 케이스)~~
 
 Feat PlayingCards 일급컬렉션 구현  (with 테스트 케이스)
 
