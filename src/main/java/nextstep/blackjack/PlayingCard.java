@@ -14,7 +14,7 @@ public class PlayingCard {
     }
 
     public boolean isAceCard() {
-        return Number.ACE.equals(number);
+        return Number.A.equals(number);
     }
 
     public int cardValue() {
@@ -36,5 +36,10 @@ public class PlayingCard {
     @Override
     public int hashCode() {
         return Objects.hash(number, shape);
+    }
+
+    @Override
+    public String toString() {
+        return number + shape.getValue();
     }
 }

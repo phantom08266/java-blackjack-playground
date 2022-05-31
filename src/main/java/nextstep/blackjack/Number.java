@@ -10,11 +10,10 @@ public enum Number {
     EIGHT(8),
     NINE(9),
     TEN(10),
-    JACK(10),
-    QUEEN(10),
-    KING(10),
-    ACE(11)
-    ;
+    J(10),
+    Q(10),
+    K(10),
+    A(11);
 
     private final int value;
 
@@ -22,7 +21,15 @@ public enum Number {
         this.value = value;
     }
 
-    public int getValue(){
+    public int getValue() {
         return this.value;
+    }
+
+    @Override
+    public String toString() {
+        if (Number.A.equals(this) || Number.J.equals(this) || Number.K.equals(this) || Number.Q.equals(this)) {
+            return this.name();
+        }
+        return value + "";
     }
 }

@@ -13,7 +13,7 @@ class PlayingCardsTest {
     @DisplayName("카드합이 21인 경우 블랙잭이다")
     void test1() {
         List<PlayingCard> playingCards = Arrays.asList(new PlayingCard(Number.TEN, Shape.CLOVER),
-            new PlayingCard(Number.ACE, Shape.HEART));
+            new PlayingCard(Number.A, Shape.HEART));
 
         PlayingCards cardNumbers = new PlayingCards(playingCards);
 
@@ -24,10 +24,10 @@ class PlayingCardsTest {
     @DisplayName("Ace 카드만 4개 뽑았다면 총합은 14이다.")
     void test2() {
         List<PlayingCard> playingCards = Arrays.asList(
-            new PlayingCard(Number.ACE, Shape.CLOVER),
-            new PlayingCard(Number.ACE, Shape.DIAMOND),
-            new PlayingCard(Number.ACE, Shape.SPADE),
-            new PlayingCard(Number.ACE, Shape.HEART));
+            new PlayingCard(Number.A, Shape.CLOVER),
+            new PlayingCard(Number.A, Shape.DIAMOND),
+            new PlayingCard(Number.A, Shape.SPADE),
+            new PlayingCard(Number.A, Shape.HEART));
 
         PlayingCards cardNumbers = new PlayingCards(playingCards);
 

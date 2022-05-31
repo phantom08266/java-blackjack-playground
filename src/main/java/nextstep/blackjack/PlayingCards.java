@@ -37,12 +37,23 @@ public class PlayingCards {
         return result;
     }
 
-
+    public void addCard(PlayingCard playingCard) {
+        playingCards.add(playingCard);
+    }
 
     private int getAceNumber(int sum) {
         if (sum + ACE_MAX_NUMBER > BLACK_JACK_NUMBER) {
             return ACE_MIN_NUMBER;
         }
         return ACE_MAX_NUMBER;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        for (PlayingCard playingCard : playingCards) {
+            result.append(playingCard).append(", ");
+        }
+        return result.toString();
     }
 }

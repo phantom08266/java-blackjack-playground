@@ -1,9 +1,8 @@
 package nextstep.blackjack;
 
-import java.util.List;
-
 public class Dealer {
 
+    private final String name = "딜러";
     private final int BLACK_JACK_NUMBER = 21;
     public final int STANDARD_NUMBER = 16;
     private final PlayingCards cardNumbers;
@@ -18,5 +17,9 @@ public class Dealer {
 
     public boolean isBust() {
         return cardNumbers.sumCardNumber() >= BLACK_JACK_NUMBER;
+    }
+
+    public void showPlayingCards() {
+        System.out.printf("%s카드: %s%n", name, cardNumbers);
     }
 }

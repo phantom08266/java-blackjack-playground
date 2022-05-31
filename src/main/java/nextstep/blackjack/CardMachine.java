@@ -6,12 +6,10 @@ import java.util.Collections;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class CardMachine {
 
     private List<PlayingCard> playingCards = new ArrayList<>();
-    private List<Integer> cardIndexs;
     private int index;
 
     public CardMachine() {
@@ -20,11 +18,16 @@ public class CardMachine {
         playingCards.addAll(createSpadeCards());
         playingCards.addAll(createCloverCards());
 
-        cardIndexs = IntStream.range(0, playingCards.size())
-            .boxed()
-            .collect(Collectors.toList());
-        Collections.shuffle(cardIndexs);
+        Collections.shuffle(playingCards);
         index = 0;
+    }
+
+    public PlayingCards getTwoCards() {
+        List<PlayingCard> playingCards = new ArrayList<>();
+        for (int i = 0; i < 2; i++) {
+            playingCards.add(getOneCard());
+        }
+        return new PlayingCards(playingCards);
     }
 
     public PlayingCard getOneCard() {
@@ -52,7 +55,7 @@ public class CardMachine {
 
     private List<PlayingCard> getShapeAllCards(Function<Number, PlayingCard> filter) {
         return Arrays.stream(Number.values())
-            .map(filter)
-            .collect(Collectors.toList());
+                .map(filter)
+                .collect(Collectors.toList());
     }
 }
