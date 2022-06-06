@@ -1,6 +1,7 @@
 package nextstep.blackjack.status;
 
 import java.util.List;
+import nextstep.blackjack.player.Name;
 
 public class Cards {
 
@@ -15,7 +16,7 @@ public class Cards {
     }
 
     public void add(PlayingCard card) {
-
+        playingCards.add(card);
     }
 
     public int sumPlayingCardNumber() {
@@ -46,5 +47,14 @@ public class Cards {
 
     public boolean isBust() {
         return sumPlayingCardNumber() > BUST_LIMIT_VALUE;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        for (PlayingCard card : playingCards) {
+            result.append(card).append(", ");
+        }
+        return result.toString().replaceFirst(". $", "");
     }
 }

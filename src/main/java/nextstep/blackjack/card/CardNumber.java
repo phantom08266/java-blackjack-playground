@@ -28,4 +28,13 @@ public enum CardNumber {
     public int getScore() {
         return score;
     }
+
+    @Override
+    public String toString() {
+        if (CardNumber.ACE.equals(this) || CardNumber.JACK.equals(this) ||
+            CardNumber.KING.equals(this) || CardNumber.QUEEN.equals(this)) {
+            return this.name().substring(0, 1);
+        }
+        return score + "";
+    }
 }

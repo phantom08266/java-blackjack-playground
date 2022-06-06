@@ -38,4 +38,9 @@ public class PlayingCard {
     public int hashCode() {
         return Objects.hash(cardNumber, suit);
     }
+
+    @Override
+    public String toString() {
+        return cardNumber + suit.toString();
+    }
 }
