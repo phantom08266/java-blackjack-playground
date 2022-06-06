@@ -14,4 +14,12 @@ public class Players {
     public void showCards() {
         players.forEach(System.out::println);
     }
+
+    public List<Player> getPlayers() {
+        return players;
+    }
+
+    public void showCardsAndResult() {
+        players.forEach(Player::showCardsAndScore);
+    }
 }

@@ -1,10 +1,10 @@
 package nextstep.blackjack.status;
 
 import java.util.List;
-import nextstep.blackjack.player.Name;
 
 public class Cards {
 
+    private final int UNDER_SCORE_LIMIT = 16;
     private final int BLACK_JACK_LIMIT = 21;
     private final int ACE_ELEVEN_NUMBER = 11;
     private final int ACE_SUB_NUMBER = 10;
@@ -19,7 +19,7 @@ public class Cards {
         playingCards.add(card);
     }
 
-    public int sumPlayingCardNumber() {
+    public int getScore() {
         int result = getSumAceNotCards();
         long aceCardCount = aceCardCount();
         for (int i = 0; i < aceCardCount; i++) {
@@ -46,7 +46,11 @@ public class Cards {
     }
 
     public boolean isBust() {
-        return sumPlayingCardNumber() > BUST_LIMIT_VALUE;
+        return getScore() > BUST_LIMIT_VALUE;
+    }
+
+    public boolean isUnderScoreFromDealer() {
+        return getScore() <= UNDER_SCORE_LIMIT;
     }
 
     @Override

@@ -42,7 +42,7 @@ class CardsTest {
         PlayingCard aceDiamonds = new PlayingCard(CardNumber.ACE, Suit.DIAMONDS);
 
         Cards cards = new Cards(Arrays.asList(queenHeart, kingHeart, aceDiamonds));
-        assertThat(cards.sumPlayingCardNumber()).isEqualTo(21);
+        assertThat(cards.getScore()).isEqualTo(21);
     }
 
     @Test
@@ -53,6 +53,6 @@ class CardsTest {
         PlayingCard aceDiamonds = new PlayingCard(CardNumber.ACE, Suit.DIAMONDS);
 
         Cards cards = new Cards(Arrays.asList(eightHeart, twoHeart, aceDiamonds));
-        assertThat(cards.sumPlayingCardNumber()).isEqualTo(21);
+        assertThat(cards.getScore()).isEqualTo(21);
     }
 }

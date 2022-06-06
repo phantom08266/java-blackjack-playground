@@ -1,6 +1,7 @@
 package nextstep.blackjack.player;
 
 import nextstep.blackjack.status.Cards;
+import nextstep.blackjack.status.PlayingCard;
 
 public class Dealer {
 
@@ -19,5 +20,17 @@ public class Dealer {
 
     public void showCards() {
         System.out.printf("%s: %s \n", name, cards);
+    }
+
+    public boolean isUnderScore() {
+        return cards.isUnderScoreFromDealer();
+    }
+
+    public void addCard(PlayingCard playingCard) {
+        cards.add(playingCard);
+    }
+
+    public void showCardsAndResult() {
+        System.out.printf("%s카드: %s - 결과: %d \n", name, cards, cards.getScore());
     }
 }
