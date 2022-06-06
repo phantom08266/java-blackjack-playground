@@ -14,6 +14,14 @@ public class PlayingCard {
         this.suit = suit;
     }
 
+    public int getCardNumber() {
+        return cardNumber.getScore();
+    }
+
+    public boolean isAceCard() {
+        return cardNumber.isAce();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
