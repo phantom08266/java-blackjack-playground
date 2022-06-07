@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Cards {
 
+    public static final int CARD_SIZE = 2;
     private final int UNDER_SCORE_LIMIT = 16;
     private final int BLACK_JACK_LIMIT = 21;
     private final int ACE_ELEVEN_NUMBER = 11;
@@ -60,5 +61,9 @@ public class Cards {
             result.append(card).append(", ");
         }
         return result.toString().replaceFirst(". $", "");
+    }
+
+    public boolean twoCardBlackJack() {
+        return playingCards.size() == CARD_SIZE;
     }
 }

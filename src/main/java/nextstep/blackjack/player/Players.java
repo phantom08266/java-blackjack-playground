@@ -1,7 +1,6 @@
 package nextstep.blackjack.player;
 
 import java.util.List;
-import nextstep.blackjack.player.Player;
 
 public class Players {
 
@@ -21,5 +20,33 @@ public class Players {
 
     public void showCardsAndResult() {
         players.forEach(Player::showCardsAndScore);
+    }
+
+    public void updateMoney(Dealer dealer) {
+        players.forEach(
+            player -> {
+                if (dealerAndPlayerBlackJack(player, dealer)) {
+                    player.moneyClear();
+                    return;
+                }
+                int bettingMoney = player.getBettingMoney();
+                int score = player.getScore();
+                dealer.updateMoney(bettingMoney, score);
+                player.getUpdateMoney(dealer.getScore());
+            }
+        );
+    }
+
+    private boolean dealerAndPlayerBlackJack(Player player, Dealer dealer) {
+        return player.isBlackJack() && dealer.isBlackJack();
+    }
+
+    public boolean isAllBlackJack() {
+        return players.stream()
+            .allMatch(Player::isBlackJack);
+    }
+
+    public void moneyClear() {
+        players.forEach(Player::moneyClear);
     }
 }

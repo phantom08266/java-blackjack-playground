@@ -32,6 +32,20 @@ public class BlackJackGame {
         dealer.showCardsAndResult();
         players.showCardsAndResult();
 
+        updatePlayersAndDealerMoney(players, dealer);
+        InputView.result();
+        System.out.printf("%s: %d \n", dealer.getName(), dealer.getMoney());
+        players.getPlayers()
+            .forEach(player -> System.out.printf("%s: %d \n", player.getName(), player.getBettingMoney()));
+    }
+
+    private void updatePlayersAndDealerMoney(Players players, Dealer dealer) {
+        if (dealer.isBust()) {
+            players.moneyClear();
+            return;
+        }
+
+        players.updateMoney(dealer);
     }
 
     private void dealerAddCards(Dealer dealer) {
